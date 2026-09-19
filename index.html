@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismail - CSE Student Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .language-tag {
+            background: #e6ffe6;
+            color: #1fa31f;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation --> 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Ismail</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name">Ismail</span>
+                    </h1>
+                    <p class="hero-subtitle">Computer Science & Engineering Student</p>
+                    <p class="hero-description">Passionate about technology, programming, and creating innovative solutions</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal">
+                    <div class="profile-panel">
+                        <div class="status-pill">Available for internships</div>
+                        <div class="profile-visual">
+                            <img src="Images/Ismail.jpeg" alt="Ismail portrait" class="profile-image">
+                        </div>
+                        <div class="profile-summary">
+                            <div class="summary-item">
+                                <strong>3+</strong>
+                                <span>Projects</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>5+</strong>
+                                <span>Skills</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>100%</strong>
+                                <span>Curious</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="text-card reveal">
+                        <h3>Who I Am</h3>
+                        <p>I'm Ismail, a dedicated Computer Science & Engineering student at American International University-Bangladesh (AIUB). I'm passionate about technology and constantly exploring new programming languages, frameworks, and emerging technologies.</p>
+                        
+                        <h3>My Journey</h3>
+                        <p>Currently pursuing my degree in CSE, I've developed a strong foundation in programming, algorithms, data structures, and software development. I enjoy solving complex problems and building innovative solutions that can make a real impact.</p>
+                        
+                        <h3>What Drives Me</h3>
+                        <p>I believe in continuous learning and staying updated with the latest technological trends. My goal is to become a skilled software engineer who can contribute to meaningful projects and help shape the future of technology.</p>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Education</h4>
+                            <p>CSE at AIUB</p>
+                        </div>
+                    </div>
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Programming</h4>
+                            <p>Multiple Languages</p>
+                        </div>
+                    </div>
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Projects</h4>
+                            <p>Academic & Personal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <h3>Bachelor of Science in Computer Science & Engineering</h3>
+                                <span class="education-period">2025 - Present</span>
+                            </div>
+                            <div class="education-details">
+                                <p class="institution">American International University-Bangladesh (AIUB)</p>
+                                <p class="description">Pursuing comprehensive education in computer science fundamentals, programming, algorithms, data structures, software engineering, and emerging technologies.</p>
+                                <div class="subjects">
+                                    <span class="subject-tag">Data Structures</span>
+                                    <span class="subject-tag">Algorithms</span>
+                                    <span class="subject-tag">OOP</span>
+                                    <span class="subject-tag">Database Systems</span>
+                                    <span class="subject-tag">Web Development</span>
+                                    <span class="subject-tag">Software Engineering</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="education-card reveal">
+                            <div class="education-header">
+                                <h3>Higher Secondary Certificate (HSC)</h3>
+                                <span class="education-period">2022 - 2024</span>
+                            </div>
+                            <div class="education-details">
+                                <p class="institution">Notre Dame College Mymensingh</p>
+                                <p class="description">Completed higher secondary education with a focus on science, which was my base for engineering and inspiring about future. These were my favorite sub:</p>
+                                <div class="subjects">
+                                    <span class="subject-tag">Physics</span>
+                                    <span class="subject-tag">Higher Mathmatics</span>
+                                    <span class="subject-tag">ICT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="education-card reveal">
+                            <div class="education-header">
+                                <h3>Secondary School Certificate (SSC)</h3>
+                                <span class="education-period">2017 - 2022</span>
+                            </div>
+                            <div class="education-details">
+                                <p class="institution">Govt. Fulbariya model pilot high school</p>
+                                <p class="description">Completed secondary education with enjoy and playing Cricket most of the time. Which is my greatest and prime time, I'll never forget my school life friends and also teachers. These were my hobbies:</p>
+                                <div class="subjects">
+                                    <span class="subject-tag">Study</span>
+                                    <span class="subject-tag">Sports</span>
+                                    <span class="subject-tag">Fun</span>
+                                    <span class="subject-tag">Travel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <span class="language-tag">Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="language-tag">C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span>C#</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category reveal">
+                    <h3>Web Technologies</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category reveal">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <span>Cloud Computing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Student Management System</h3>
+                        <p>A comprehensive web application for managing student records, built with modern web technologies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Algorithm Visualizer</h3>
+                        <p>Interactive tool to visualize sorting and searching algorithms for educational purposes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Website</h3>
+                        <p>Full-stack e-commerce platform with user authentication and payment integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-card contact-left reveal">
+                    <div class="contact-with">
+                        <p class="mini-label">Socials</p>
+                        <h3>Connect With Me</h3>
+                        <div class="social-links contact-social">
+                            <a href="https://www.facebook.com/share/169T7gsHSP/" class="social-link" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/IsmailH08985287?t=900kXEq44XptBI89FZlpwQ&s=09" class="social-link" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/smiles_ss15?igsh=MWxkeG5uMjh5MThoaQ==" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.threads.com/@smiles_ss15" class="social-link" title="Threads" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="mini-label">Availability</p>
+                        <h3>Let's Connect</h3>
+                        <p>I'm always interested in discussing new opportunities, collaborating on projects, or just having a conversation about technology.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method reveal">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:25-62976-2@student.aiub.edu">25-62976-2@student.aiub.edu</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method reveal">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://www.linkedin.com/in/ismail-siddiquee-93b354407?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">linkedin.com/in/ismail-siddiquee-93b354407</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method reveal">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>GitHub</h4>
+                                    <p><a href="https://github.com/ih6297191-sudo" target="_blank" rel="noopener noreferrer">github.com/ih6297191-sudo</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form reveal">
+                    <p class="mini-label">Message</p>
+                    <h3>Send a Quick Note</h3>
+                    <form action="https://formspree.io/f/meorzqlp" method="post">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="rate" min="1" max="5" placeholder="Rate me (out of 5)" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message (anonymously)" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Ismail. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ismail-siddiquee-93b354407?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ih6297191-sudo" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
