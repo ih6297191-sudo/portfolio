@@ -152,6 +152,15 @@ body::before {
     position: relative;
 }
 
+body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light-theme .nav-link {
+    color: #1e293b;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -171,6 +180,13 @@ body::before {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
+
+body.light-theme .bar {
+    background: #1e293b;
 }
 
 .bar {
@@ -1189,6 +1205,15 @@ section {
 
     .nav-menu.active .nav-link {
         color: #f8fafc;
+    }
+
+    body.light-theme .nav-menu {
+        background: rgba(248, 250, 252, 0.98);
+        border-top-color: rgba(15, 23, 42, 0.1);
+    }
+
+    body.light-theme .nav-menu.active .nav-link {
+        color: #1e293b;
     }
     
     .hero-content {
