@@ -458,6 +458,12 @@ body.light-theme .bar {
     border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
+.summary-item-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
 .summary-item strong {
     display: block;
     font-size: 1.2rem;
