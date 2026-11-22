@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismail - CSE Student Portfolio</title>
+    <meta name="description" content="Ismail Siddiquee is a Computer Science and Engineering student building practical software and web applications.">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:title" content="Ismail Siddiquee - CSE Student Portfolio">
+    <meta property="og:description" content="Explore my projects, technical skills, education, and contact details.">
+    <meta property="og:image" content="Images/Ismail.jpeg">
+    <title>Ismail Siddiquee - CSE Student Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -19,8 +24,9 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation --> 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-text">Ismail</span>
@@ -59,16 +65,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main id="main-content">
+    <section id="home" class="hero" aria-labelledby="hero-title">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" id="hero-title">
                         <span class="greeting">Hello, I'm</span>
-                        <span class="name">Ismail</span>
+                        <span class="name">Ismail Siddiquee</span>
                     </h1>
-                    <p class="hero-subtitle">Computer Science & Engineering Student</p>
-                    <p class="hero-description">Passionate about technology, programming, and creating innovative solutions</p>
+                    <p class="hero-subtitle">Computer Science & Engineering Undergraduate</p>
+                    <p class="hero-description">I turn ideas into practical software through Java, web technologies, and a strong problem-solving mindset.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -82,16 +89,16 @@
                         </div>
                         <div class="profile-summary">
                             <a class="summary-item summary-item-link" href="https://github.com/ih6297191-sudo/Vehicle-rental-company-" target="_blank" rel="noopener noreferrer" aria-label="View my GitHub project">
-                                <strong>1+</strong>
+                                <strong>2</strong>
                                 <span>Projects</span>
                             </a>
                             <a class="summary-item summary-item-link" href="#skills" aria-label="View my technical skills">
-                                <strong>2+</strong>
-                                <span>Skills</span>
+                                <strong>12+</strong>
+                                <span>Technologies</span>
                             </a>
                             <div class="summary-item">
-                                <strong>100%</strong>
-                                <span>Curious</span>
+                                <strong>Open</strong>
+                                <span>To Opportunities</span>
                             </div>
                         </div>
                     </div>
@@ -339,62 +346,78 @@
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image">
+                        <div class="project-preview vehicle-preview" aria-hidden="true">
+                            <div class="preview-window">
+                                <div class="preview-bar">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-heading"></div>
+                                    <div class="preview-cards">
+                                        <div><i class="fas fa-car"></i></div>
+                                        <div><i class="fas fa-key"></i></div>
+                                        <div><i class="fas fa-user"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/ih6297191-sudo/Vehicle-rental-company-" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Vehicle Rental Company on GitHub" title="View source code">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Student Management System</h3>
-                        <p>A comprehensive web application for managing student records, built with modern web technologies.</p>
+                        <div class="project-heading">
+                            <h3>Vehicle Rental Company</h3>
+                            <span class="project-number">01</span>
+                        </div>
+                        <p>A beginner-level Java console application for managing vehicle rentals, customer records, and booking information using text files for storage.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Database (text files)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-preview portfolio-preview" aria-hidden="true">
+                            <div class="preview-window">
+                                <div class="preview-bar">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-content portfolio-layout">
+                                    <div class="preview-sidebar"></div>
+                                    <div class="preview-main">
+                                        <div class="preview-heading"></div>
+                                        <div class="preview-line"></div>
+                                        <div class="preview-line short"></div>
+                                        <div class="preview-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/ih6297191-sudo/portfolio" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View this portfolio source on GitHub" title="View source code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-heading">
+                            <h3>Personal Portfolio</h3>
+                            <span class="project-number">02</span>
+                        </div>
+                        <p>A responsive portfolio website featuring theme switching, active navigation, scroll reveal effects, and an accessible contact experience.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Algorithm Visualizer</h3>
-                        <p>Interactive tool to visualize sorting and searching algorithms for educational purposes.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Tkinter</span>
-                            <span class="tech-tag">Algorithms</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-Commerce Website</h3>
-                        <p>Full-stack e-commerce platform with user authentication and payment integration.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express</span>
                         </div>
                     </div>
                 </div>
@@ -412,10 +435,10 @@
                         <p class="mini-label">Socials</p>
                         <h3>Connect With Me</h3>
                         <div class="social-links contact-social">
-                            <a href="https://www.facebook.com/share/169T7gsHSP/" class="social-link" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://x.com/IsmailH08985287?t=900kXEq44XptBI89FZlpwQ&s=09" class="social-link" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/smiles_ss15?igsh=MWxkeG5uMjh5MThoaQ==" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.threads.com/@smiles_ss15" class="social-link" title="Threads" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                            <a href="https://www.facebook.com/share/169T7gsHSP/" class="social-link" title="Facebook" aria-label="Visit Ismail on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/IsmailH08985287?t=900kXEq44XptBI89FZlpwQ&s=09" class="social-link" title="Twitter" aria-label="Visit Ismail on X" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/smiles_ssh?igsh=MWxkeG5uMjh5MThoaQ==" class="social-link" title="Instagram" aria-label="Visit Ismail on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.threads.com/@smiles_ssh" class="social-link" title="Threads" aria-label="Visit Ismail on Threads" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-threads"></i></a>
                         </div>
                     </div>
 
@@ -463,13 +486,13 @@
                     <h3>Send a Quick Note</h3>
                     <form action="https://formspree.io/f/meorzqlp" method="post">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" aria-label="Your name" autocomplete="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" aria-label="Your email address" autocomplete="email" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" aria-label="Your message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -477,7 +500,7 @@
             </div>
         </div>
     </section>
-    
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -485,9 +508,9 @@
             <div class="footer-content">
                 <p>&copy; <span id="year"></span> Ismail. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ismail-siddiquee-93b354407?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ih6297191-sudo" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/@IsmailH08985287" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ismail-siddiquee-93b354407?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link" aria-label="Visit Ismail on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ih6297191-sudo" class="social-link" aria-label="Visit Ismail on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/IsmailH08985287?t=900kXEq44XptBI89FZlpwQ&s=09" class="social-link" aria-label="Visit Ismail on X" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>

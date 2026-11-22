@@ -4,6 +4,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 const yearEl = document.getElementById('year');
 const revealItems = document.querySelectorAll('.reveal');
 const themeToggle = document.querySelector('.theme-toggle');
+const sections = document.querySelectorAll('main section[id]');
 
 if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
@@ -57,3 +58,23 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealItems.forEach((item) => revealObserver.observe(item));
+
+if ('IntersectionObserver' in window && sections.length) {
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            navLinks.forEach((link) => {
+                const isActive = link.getAttribute('href') === `#${entry.target.id}`;
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+    }, { rootMargin: '-35% 0px -55%', threshold: 0 });
+
+    sections.forEach((section) => navObserver.observe(section));
+}
