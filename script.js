@@ -125,40 +125,31 @@ function appendChatMessage(text, sender) {
 
 function getPortfolioResponse(question) {
     const query = question.toLowerCase();
+    const data = window.portfolioAssistantData;
 
-    if (/hello|hi\b|hey|good (morning|afternoon|evening)/.test(query)) {
-        return "Hello! You can ask me about Ismail's education, skills, projects, ORCID profile, or contact details.";
+    if (!data) {
+        return "The portfolio assistant is missing its knowledge data.";
     }
 
-    if (/contact|email|linkedin|github|reach|connect/.test(query)) {
-        return "You can email Ismail at 25-62976-2@student.aiub.edu. His LinkedIn is linkedin.com/in/ismail-siddiquee-93b354407 and his GitHub is github.com/ih6297191-sudo.";
+    if (data.greetings?.some(greeting => query === greeting || query.startsWith(`${greeting} `))) {
+        return data.greetingAnswer;
     }
 
-    if (/education|study|university|college|school|degree|aiub|academic/.test(query)) {
-        return "Ismail is pursuing a BSc in Computer Science and Engineering at American International University-Bangladesh (AIUB), starting in 2025. He completed HSC at Notre Dame College Mymensingh and SSC at Govt. Fulbariya Model Pilot High School.";
-    }
+    let bestMatch = null;
+    let bestScore = 0;
 
-    if (/skill|language|technology|tech|coding|programming|know|stack/.test(query)) {
-        return "His skills include Python, Java, C++, JavaScript, C#, HTML5, CSS3, React, Node.js, Git, MySQL, Linux, and Cloud Computing.";
-    }
+    data.knowledge.forEach((entry) => {
+        const score = entry.keywords.reduce((total, keyword) => {
+            return total + (query.includes(keyword.toLowerCase()) ? keyword.length : 0);
+        }, 0);
 
-    if (/project|work|portfolio|vehicle|rental|built|build/.test(query)) {
-        return "Ismail has built a Vehicle Rental Company Java console application using text-file storage, and a responsive Personal Portfolio in HTML, CSS, and JavaScript.";
-    }
+        if (score > bestScore) {
+            bestScore = score;
+            bestMatch = entry;
+        }
+    });
 
-    if (/orcid|research|researcher|profile/.test(query)) {
-        return "Ismail's ORCID research profile is available at https://orcid.org/0009-0008-0176-7138.";
-    }
-
-    if (/name|who (is|are) (he|you)|about/.test(query)) {
-        return "Ismail Siddiquee is a Computer Science and Engineering undergraduate at AIUB who enjoys software development, problem solving, and building practical applications.";
-    }
-
-    if (/thank|thanks/.test(query)) {
-        return "You're welcome!";
-    }
-
-    return "I can answer from the local portfolio data: try asking about skills, education, projects, contact details, or the ORCID profile.";
+    return bestScore > 0 ? bestMatch.answer : data.fallback;
 }
 
 function submitChatQuestion(question) {

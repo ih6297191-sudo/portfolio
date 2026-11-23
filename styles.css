@@ -1474,9 +1474,10 @@ section {
 .chat-launcher {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
-    min-height: 52px;
-    padding: 0 1.1rem;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    padding: 0;
     border: 0;
     border-radius: 999px;
     background: linear-gradient(135deg, #2563eb, #7c3aed);
@@ -1493,7 +1494,7 @@ section {
 }
 
 .chat-launcher i {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
 }
 
 .chat-panel {
