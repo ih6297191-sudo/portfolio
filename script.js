@@ -93,7 +93,7 @@ function setChatOpen(isOpen) {
     chatPanel.classList.toggle('open', isOpen);
     chatPanel.setAttribute('aria-hidden', String(!isOpen));
     chatLauncher.setAttribute('aria-expanded', String(isOpen));
-    chatLauncher.setAttribute('aria-label', isOpen ? 'Close portfolio assistant' : 'Open portfolio assistant');
+    chatLauncher.setAttribute('aria-label', isOpen ? "Close Ismail's AI assistant" : "Open Ismail's AI assistant");
 
     if (isOpen) {
         window.setTimeout(() => chatInput?.focus(), 180);
