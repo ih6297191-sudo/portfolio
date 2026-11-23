@@ -86,6 +86,17 @@ const chatClose = portfolioChat?.querySelector('.chat-close');
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
+let chatLabelTimeout;
+
+function showChatLauncherLabel() {
+    if (!chatLauncher) return;
+
+    window.clearTimeout(chatLabelTimeout);
+    chatLauncher.classList.add('show-label');
+    chatLabelTimeout = window.setTimeout(() => {
+        chatLauncher.classList.remove('show-label');
+    }, 2400);
+}
 
 function setChatOpen(isOpen) {
     if (!chatPanel || !chatLauncher) return;
@@ -101,6 +112,7 @@ function setChatOpen(isOpen) {
 }
 
 chatLauncher?.addEventListener('click', () => {
+    showChatLauncherLabel();
     setChatOpen(!chatPanel?.classList.contains('open'));
 });
 
