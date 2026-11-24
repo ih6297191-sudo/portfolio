@@ -1556,6 +1556,41 @@ section {
     }
 }
 
+@keyframes chatAssistantTapBounce {
+    0% {
+        transform: scale(1);
+    }
+    28% {
+        transform: scale(0.84) translateY(3px);
+    }
+    58% {
+        transform: scale(1.14) translateY(-5px);
+    }
+    78% {
+        transform: scale(0.96) translateY(1px);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.chat-launcher.tap-bounce {
+    animation: chatAssistantTapBounce 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chat-launcher.tap-bounce::after {
+    opacity: 0.8;
+    animation: chatAssistantPulse 0.5s ease-out;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .chat-launcher {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+    }
+}
+
 .chat-launcher:hover {
     transform: translateY(-3px) scale(1.04);
     filter: brightness(1.12);

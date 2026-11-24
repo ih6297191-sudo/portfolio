@@ -120,6 +120,15 @@ function setChatOpen(isOpen) {
     }
 }
 
+chatLauncher?.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'mouse') {
+        chatLauncher.classList.remove('tap-bounce');
+        void chatLauncher.offsetWidth;
+        chatLauncher.classList.add('tap-bounce');
+        window.setTimeout(() => chatLauncher.classList.remove('tap-bounce'), 520);
+    }
+});
+
 chatLauncher?.addEventListener('click', () => {
     showChatLauncherLabel();
     setChatOpen(!chatPanel?.classList.contains('open'));
