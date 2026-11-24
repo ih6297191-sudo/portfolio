@@ -87,19 +87,27 @@ const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
 let chatLabelTimeout;
+let idleChatLabelTimeout;
+let chatHasBeenInteracted = false;
 
-function showChatLauncherLabel() {
+function showChatLauncherLabel(duration = 2400) {
     if (!chatLauncher) return;
 
     window.clearTimeout(chatLabelTimeout);
     chatLauncher.classList.add('show-label');
     chatLabelTimeout = window.setTimeout(() => {
         chatLauncher.classList.remove('show-label');
-    }, 2400);
+    }, duration);
 }
 
 function setChatOpen(isOpen) {
     if (!chatPanel || !chatLauncher) return;
+
+    if (isOpen) {
+        chatHasBeenInteracted = true;
+        window.clearTimeout(idleChatLabelTimeout);
+        chatLauncher.classList.remove('show-label');
+    }
 
     chatPanel.classList.toggle('open', isOpen);
     chatPanel.setAttribute('aria-hidden', String(!isOpen));
@@ -114,6 +122,18 @@ function setChatOpen(isOpen) {
 chatLauncher?.addEventListener('click', () => {
     showChatLauncherLabel();
     setChatOpen(!chatPanel?.classList.contains('open'));
+});
+
+chatLauncher?.addEventListener('mouseenter', () => {
+    if (!chatPanel?.classList.contains('open')) {
+        showChatLauncherLabel();
+    }
+});
+
+chatLauncher?.addEventListener('focus', () => {
+    if (!chatPanel?.classList.contains('open')) {
+        showChatLauncherLabel();
+    }
 });
 
 chatClose?.addEventListener('click', () => setChatOpen(false));
@@ -187,3 +207,11 @@ portfolioChat?.querySelectorAll('[data-question]').forEach((button) => {
         submitChatQuestion(button.dataset.question || '');
     });
 });
+
+if (chatLauncher && chatPanel) {
+    idleChatLabelTimeout = window.setTimeout(() => {
+        if (!chatHasBeenInteracted && !chatPanel.classList.contains('open')) {
+            showChatLauncherLabel(5000);
+        }
+    }, 10000);
+}
