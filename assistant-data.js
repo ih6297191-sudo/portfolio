@@ -9,13 +9,13 @@ window.portfolioAssistantData = {
         name: "Ismail's AI Assistant",
         role: "Portfolio assistant",
         answer: "I'm Ismail's AI assistant. I answer questions using the approved information in this portfolio, including Ismail's education, skills, projects, and contact details.",
-        keywords: ["who are you", "what are you", "your name", "assistant", "ai assistant", "identity", "introduce yourself"]
+        keywords: ["who are you", "what are you", "your name", "assistant", "ai assistant", "identity", "introduce yourself", "Who are you", "Who are you?", "Who are you?", "tmi ke?", "tumi ke?","Tmi ke?","Tumi ke?","Tmi k","Tmi k?","k tmi?","k tmi","ke tmi?","ke tmi","K tmi?","K tmi" ]
     },
 
     knowledge: [
         {
             title: "About",
-            keywords: ["about", "who", "yourself", "introduce", "name", "ismail", "summary", "student"],
+            keywords: ["Talk about ismail","Talk about Ismail","Who is ismail","Who is Ismail", "who", "yourself", "introduce", "name", "ismail", "summary", "student"],
             answer: "Ismail Siddiquee is a Computer Science and Engineering undergraduate at American International University-Bangladesh (AIUB). He enjoys software development, problem solving, and building practical applications."
         },
         {
