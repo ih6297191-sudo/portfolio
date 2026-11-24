@@ -5,6 +5,13 @@
 window.portfolioAssistantData = {
     name: "Ismail Siddiquee",
 
+    identity: {
+        name: "Ismail's AI Assistant",
+        role: "Portfolio assistant",
+        answer: "I'm Ismail's AI assistant. I answer questions using the approved information in this portfolio, including Ismail's education, skills, projects, and contact details.",
+        keywords: ["who are you", "what are you", "your name", "assistant", "ai assistant", "identity", "introduce yourself"]
+    },
+
     knowledge: [
         {
             title: "About",

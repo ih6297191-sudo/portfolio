@@ -174,6 +174,10 @@ function getPortfolioResponse(question) {
         return "The portfolio assistant is missing its knowledge data.";
     }
 
+    if (data.identity?.keywords?.some(keyword => query.includes(keyword))) {
+        return data.identity.answer;
+    }
+
     if (data.greetings?.some(greeting => query === greeting || query.startsWith(`${greeting} `))) {
         return data.greetingAnswer;
     }
