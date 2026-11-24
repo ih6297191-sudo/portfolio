@@ -111,6 +111,7 @@ function setChatOpen(isOpen) {
     }
 
     chatPanel.classList.toggle('open', isOpen);
+    document.body.classList.toggle('chat-open', isOpen);
     chatPanel.setAttribute('aria-hidden', String(!isOpen));
     chatLauncher.setAttribute('aria-expanded', String(isOpen));
     chatLauncher.setAttribute('aria-label', isOpen ? "Close Ismail's AI assistant" : "Open Ismail's AI assistant");
