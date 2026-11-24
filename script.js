@@ -5,6 +5,7 @@ const yearEl = document.getElementById('year');
 const revealItems = document.querySelectorAll('.reveal');
 const themeToggle = document.querySelector('.theme-toggle');
 const sections = document.querySelectorAll('main section[id]');
+const scrollTopButton = document.getElementById('scroll-top-button');
 
 if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
@@ -214,4 +215,21 @@ if (chatLauncher && chatPanel) {
             showChatLauncherLabel(5000);
         }
     }, 10000);
+}
+
+if (scrollTopButton) {
+    const updateScrollTopButton = () => {
+        scrollTopButton.classList.toggle('visible', window.scrollY > 300);
+        scrollTopButton.setAttribute('aria-hidden', String(window.scrollY <= 300));
+    };
+
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
+    });
+
+    window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+    updateScrollTopButton();
 }
