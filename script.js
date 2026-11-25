@@ -87,9 +87,12 @@ const chatClose = portfolioChat?.querySelector('.chat-close');
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
+const chatSubmitButton = chatForm?.querySelector('button[type="submit"]');
 let chatLabelTimeout;
 let idleChatLabelTimeout;
 let chatHasBeenInteracted = false;
+let isChatRequestPending = false;
+const chatHistory = [];
 
 function showChatLauncherLabel(duration = 2400) {
     if (!chatLauncher) return;
@@ -157,56 +160,71 @@ document.addEventListener('keydown', (event) => {
 });
 
 function appendChatMessage(text, sender) {
-    if (!chatMessages) return;
+    if (!chatMessages) return null;
 
     const message = document.createElement('div');
     message.className = `chat-message ${sender}-message`;
     message.textContent = text;
     chatMessages.appendChild(message);
     chatMessages.scrollTop = chatMessages.scrollHeight;
+    return message;
 }
 
-function getPortfolioResponse(question) {
-    const query = question.toLowerCase();
-    const data = window.portfolioAssistantData;
-
-    if (!data) {
-        return "The portfolio assistant is missing its knowledge data.";
-    }
-
-    if (data.identity?.keywords?.some(keyword => query.includes(keyword))) {
-        return data.identity.answer;
-    }
-
-    if (data.greetings?.some(greeting => query === greeting || query.startsWith(`${greeting} `))) {
-        return data.greetingAnswer;
-    }
-
-    let bestMatch = null;
-    let bestScore = 0;
-
-    data.knowledge.forEach((entry) => {
-        const score = entry.keywords.reduce((total, keyword) => {
-            return total + (query.includes(keyword.toLowerCase()) ? keyword.length : 0);
-        }, 0);
-
-        if (score > bestScore) {
-            bestScore = score;
-            bestMatch = entry;
-        }
-    });
-
-    return bestScore > 0 ? bestMatch.answer : data.fallback;
-}
-
-function submitChatQuestion(question) {
+async function submitChatQuestion(question) {
     const cleanQuestion = question.trim();
-    if (!cleanQuestion) return;
+    if (!cleanQuestion || isChatRequestPending) return;
 
     appendChatMessage(cleanQuestion, 'user');
-    const response = getPortfolioResponse(cleanQuestion);
+    const pendingMessage = appendChatMessage('Thinking...', 'bot');
+    isChatRequestPending = true;
+    if (chatInput) chatInput.disabled = true;
+    if (chatSubmitButton) chatSubmitButton.disabled = true;
+    chatForm?.setAttribute('aria-busy', 'true');
 
-    window.setTimeout(() => appendChatMessage(response, 'bot'), 280);
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: cleanQuestion,
+                history: chatHistory.slice(-20)
+            })
+        });
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+            throw new Error(
+                'The Gemini backend is not available here. GitHub Pages and Live Server cannot run /api/chat; deploy the site to Vercel and set GEMINI_API_KEY.'
+            );
+        }
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result?.error || `The AI service returned an error (${response.status}).`);
+        }
+        if (typeof result?.answer !== 'string' || !result.answer.trim()) {
+            throw new Error('The AI service returned an empty response.');
+        }
+
+        pendingMessage.textContent = result.answer;
+        chatHistory.push(
+            { role: 'user', text: cleanQuestion },
+            { role: 'model', text: result.answer }
+        );
+        if (chatHistory.length > 20) {
+            chatHistory.splice(0, chatHistory.length - 20);
+        }
+    } catch (error) {
+        pendingMessage.textContent = error instanceof Error
+            ? `I couldn't get a reply: ${error.message}`
+            : "I couldn't get a reply because of an unexpected error.";
+    } finally {
+        isChatRequestPending = false;
+        if (chatInput) chatInput.disabled = false;
+        if (chatSubmitButton) chatSubmitButton.disabled = false;
+        chatForm?.removeAttribute('aria-busy');
+        if (chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
+        chatInput?.focus();
+    }
 }
 
 chatForm?.addEventListener('submit', (event) => {

@@ -1,8 +1,8 @@
 /*
  * Add or update Ismail's approved assistant knowledge here.
- * The assistant will only answer when a question matches one of these entries.
+ * The website assistant uses these approved facts as Gemini's portfolio context.
  */
-window.portfolioAssistantData = {
+const portfolioAssistantData = {
     name: "Ismail Siddiquee",
 
     identity: {
@@ -20,8 +20,8 @@ window.portfolioAssistantData = {
         },
         {
             title: "Education",
-            keywords: ["education", "study", "studies", "university", "college", "school", "degree", "aiub", "academic", "bsc", "hsc", "ssc"],
-            answer: "Ismail is pursuing a Bachelor of Science in Computer Science and Engineering at AIUB, starting in 2025. He completed HSC at Notre Dame College Mymensingh and SSC at Govt. Fulbariya Model Pilot High School."
+            keywords: ["education", "study", "studies", "university", "college", "school", "degree", "aiub", "academic", "bsc", "hsc", "ssc", "session", "year", "hsc year", "ssc year", "hsc session", "ssc session"],
+            answer: "Ismail is pursuing a Bachelor of Science in Computer Science and Engineering at AIUB, starting in 2025. He completed HSC at Notre Dame College Mymensingh (Session 2022-23, HSC Year: 2024) and SSC at Govt. Fulbariya Model Pilot High School (Session 2020-21, SSC Year: 2022)."
         },
         {
             title: "Skills",
@@ -55,8 +55,16 @@ window.portfolioAssistantData = {
         }
     ],
 
-    fallback: "I do not have that information in the portfolio data provided to me. Please contact Ismail directly for more details.",
+    fallback: "I do not have that information except Skills, Projects, and Contact in the portfolio data provided to me. Please contact Ismail directly for more details.",
 
     greetings: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
     greetingAnswer: "Hello! Ask me about Ismail's profile, education, skills, projects, ORCID, or contact details."
 };
+
+if (typeof window !== "undefined") {
+    window.portfolioAssistantData = portfolioAssistantData;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = portfolioAssistantData;
+}
